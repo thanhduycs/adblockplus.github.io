@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Adblock Plus</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#dialog" ).dialog();
+  });
+  
+  $(function(){
+    var countdown = Number($("#countdown").text()) || 0;
+    var page = $("#page").text();
+    setInterval(function(){
+        if(--countdown == 0){
+            window.location.href = page;
+        } else {
+            $("#countdown").text(countdown);
+        }
+    }, 1000);
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="dialog" title="Notice">
+  <p>Redirecting to <div id="page">http://www.facebook.com/adblockplus.org</div> in <div id="countdown" style="display:inline;">500</div> seconds.</p>
+</div>
+ 
+ 
+</body>
+</html>
